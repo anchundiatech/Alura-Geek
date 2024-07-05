@@ -1,0 +1,363 @@
+body {
+    background:  #e7d2ec;
+    overflow-x: hidden;
+    line-height: 1.5;
+    
+}
+   
+
+
+.header {
+  padding: 1em 0;
+  background: #6b3579;
+  border-radius: 15px;
+  box-shadow: 22px 23px 110px #6b3579,
+}
+
+.container__encabezado{
+  display: flex;
+  justify-content: center;
+}
+
+.titulo_logo{
+color: #efdfef;
+font-family: "Bodoni Moda SC", serif;
+ font-size: 70px;
+ font-optical-sizing: auto;
+ font-weight: normal;
+ font-style: normal;
+ margin-left: 10px;
+}
+span{
+  color: #be03ed;
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 50px;
+
+}
+
+.logo_img {
+width: 100px;
+height: 100px;
+margin-top: auto;
+margin-right: 10px;
+border-radius: 60% 60% 60% 60%;
+border: solid 2px;
+cursor: pointer;
+transition: 0.5s;
+padding: 0.5em ;
+}
+
+.logo_img:hover{
+    background-color: #e7d2ec;
+    scale: 1.2;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.logo_img:active{
+  scale: 1;
+  transition: 0.2s ;
+}
+
+
+
+.contenedor__principal{
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  padding-left: 10px;
+}
+
+.seccion__principal{
+  width: 50vh;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  border: solid 4px;
+  border-radius: 15px;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 15px;
+  width: 32vh;
+  border: solid 4px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+
+
+
+h1{
+   display: flex;
+    justify-content: center;
+   flex-wrap: wrap;
+    padding: 2rem 2rem;
+    font-size: 28px;
+    font-weight: 600;
+    font-family: "Bodoni Moda SC", serif;
+  
+}
+
+
+
+
+
+.producto__imagen{
+   
+    width: 160px;
+    height: 160px;
+    /* padding: 10px 30px; */
+    cursor: pointer;
+    border: black solid;
+    border-radius: 12px;
+}
+
+/*.producto__imagen:hover{
+ background-color: #e7d2ec;
+ scale: 1.2;
+ box-shadow: 1px 1px 1px #000;
+}
+
+ .producto__imagen:active{  
+  scale: 1;
+  transition: 0.2s ;
+}
+
+.producto__imagen:hover img{
+ transform: rotateY('360deg');  
+} */
+
+.card-container--info{
+  display: flex;
+  flex-direction: column ;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+
+.card-container--info p{
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Bodoni Moda SC", serif;
+  width: 20vh;
+}
+
+.card-container--value{
+display: flex;
+justify-content: space-between;
+gap: 5px;
+width: 20vh;
+}
+
+.card-container--value p{
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Bodoni Moda SC", serif;
+}
+
+.btn__delete{
+  width: 20px;
+  height: 20px;
+}
+
+i{
+  width: 5px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+i:hover{
+  cursor: pointer;
+}
+
+ 
+
+/* @keyframes rotate{
+  0%{
+    transform: rotateY(0deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+} */
+
+
+/*Style formulario*/
+.container__add_product{
+  width: 40%;
+  height: 50vh;
+}
+.form__producto{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  gap: 1rem;
+  width: 50vh;
+  background-color: #e7d2ec;
+  border-radius: 15px;
+}
+label{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+input{
+  padding: 1rem;
+  width: 80%;
+  border-radius: 20px;
+  border: solid 2px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+input[type="text"]{
+  padding: 1rem;
+  width: 80%;
+  border-radius: 20px;
+  border: solid 2px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+input[type="text"]:focus{
+  outline: none;
+  border: solid 2px #be03ed;
+}
+.contenedor__boton{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ gap: 1rem;
+}
+.button-submit, .button-clear{
+  padding: 1rem;
+  border-radius: 20px;
+  border: solid 2px;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.button-submit:hover, .button-clear:hover{
+ background-color: #be03ed;
+ color: #fff;
+ border: solid 2px #1f1d20;
+}
+.button-submit:focus{
+outline: none;
+border: solid 2px #be03ed;
+box-shadow: 1px 1px 1px #000;
+transition: 0.2s;
+}
+
+/* Footer */
+
+.footer{
+  padding: 1em 0;
+  background: #6b3579;
+  border-radius: 15px;
+  box-shadow: 22px 23px 110px #6b3579,
+}
+
+.footer-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+
+}
+.menu-titulo-footer{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-right: 21rem;
+  }
+.menu-titulo-footer p{
+color: #f2eded;
+font-family: "Bodoni Moda SC", serif;
+font-optical-sizing: auto;
+font-weight: normal;
+font-style: normal;
+font-size: 70px;
+}
+.menu-titulo-footer span{
+color: #be03ed;
+font-family: "Bodoni Moda SC", serif;
+font-optical-sizing: auto;
+font-weight: normal;
+font-style: normal;
+font-size: 50px;
+}
+.footer-logo{
+  width: 100px;
+  height: 100px;
+  margin-top: auto;
+  margin-left: 25rem;
+  border-radius: 60% 60% 60% 60%;
+  border: solid 2px #141414;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.5em ;
+}
+
+
+
+.footer-autor{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 1px;
+}
+
+.footer-autor p{
+color: #f0eaea;
+font-family: "Bodoni Moda SC", serif;
+font-optical-sizing: auto;
+font-weight: normal;
+font-style: normal;
+font-size: 20px;
+}
+.footer-autor span{
+color: #be03ed;
+font-family: "Bodoni Moda SC", serif;
+font-optical-sizing: auto;
+font-weight: bold;
+font-style: normal;
+font-size: 20px;
+}
+
+/*---ESTILO RESPONSIVO TABLET 768PX---*/
+@media screen and (max-width: 768px) {
+  .container__add_product{
+    width: 40%;
+    height: 50vh;
+}
+}
+
+
+
+
+
+
+
