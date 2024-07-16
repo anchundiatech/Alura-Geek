@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alurageek | Challenge</title>
-    
+    <link rel="shortcut icon" href="/asset/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/formulario.css"> -->
+
 
 <body>
     <header class="header">
         <div class="container__encabezado">
-            <img class="logo_img" src="asset/logo.jpg" alt="">
+            <img class="logo_img" src="asset/logo.jpg" alt="Logo Alurageek">
             <h2 class="titulo_logo">Alura<span>geek</span></h2>
         </div>
 
@@ -28,82 +29,60 @@
 
     <main class="contenedor__principal">
         <!-- Lista de productos -->
-        <section class="seccion__principal">
+        <section class="seccion__producto">
             <h1>Mis Productos</h1>
 
-            <div class="card-container">
-                <div class="card">
-                    <img class="producto__imagen" src="./asset/pexels-fotios-photos-4511372.jpg" alt="Imagen del producto 1">
-                    
-                      <div class="card-container--info">
-                        <p>consola</p>
-                      <div class="card-container--value">
-                        <p>100 $</p>
-                        <button class="btn__delete" data-id>
-                            <i class="fas fa-trash-alt"></i>
-                         </button>
-                      </div>
-                    </div>
-                     
-                  </div>
+             <div class="card-container" data-producto>
 
 
-
-            <div class="card">
-               
-                    <img class="producto__imagen" src="./asset/pexels-fotios-photos-4511372.jpg" alt="Imagen del producto 1">
-               
-                
-                    <div class="card-container--info">
-                        <p>consola</p>
-                      <div class="card-container--value">
-                        <p>100 $</p>
-                        <button class="btn__delete" data-id>
-                            <i class="fas fa-trash-alt"></i>
-                         </button>
-                      </div>
-                    </div>
-
-                    
             </div>
-                    
         </section>
 
         <!-- Formulario para agregar un producto -->
-        <section class="container__add_product">
-            <h1>Agregar un producto</h1>
-            <form class="form__producto">
-                <label for="name">Nombre del producto:</label>
-                <input id="name" placeholder="nombre del producto" type="text">
-                <label for="price">Precio del producto:</label>
-                <input id="price" placeholder="1.00 $" type="text">
-                <label for="image">Imagen del producto:</label>
-                <input id="image" placeholder="url de la imagen" type="text">
+        <section class="contenedor_formulario">
+            <h2 class="titulo_formulario">Agregar un producto</h2>
+            <form class="form_producto" data-formulario>
+                <div class="campo_formulario">
+                    <label class="campo_etiqueta" for="name" >Nombre del producto:</label>
+                    <input class="input_formulario"  id="name" placeholder="nombre del producto" type="text" required data-nombre>
+
+                </div>
+                <div class="campo_formulario">
+                    <label class="campo_etiqueta" for="price">Precio del producto:</label>
+                    <input class="input_formulario"  id="price" placeholder="1.00 $" type="text" required data-precio>
+
+                </div>
+                <div class="campo_formulario">
+                    <label class="campo_etiqueta" for="image">Imagen del producto:</label>
+                <input class="input_formulario" id="image" placeholder="Inserte la url de la imagen" type="text" required data-imagen>
+                </div>
+
 
                 <div class="contenedor__boton">
-                    <button type="submit" class="button-submit" id="button">Enviar</button>
-                    <button type="reset" class="button-clear" id="button">Limpiar</button> 
+                    <button type="submit"  class="button" value="Guardar"  >Agregar</button>
+                    <button type="button" id="eliminar" class="button" data-limpiarformulario>Eliminar</button>
                 </div>
 
             </form>
         </section>
     </main>
     <footer class="footer">
-        
-            <div class="footer-container">
-                
-                <div class="menu-titulo-footer">
-                    <img class="footer-logo" src="asset/logo.jpg" alt="">
-                    <p>Alura<span>geek</span></p>
-                </div>
-                <div class="footer-autor">
-                    <p>© Desarrollado  por</p>
-                    <p>Alejandro <span>Anchundia</span></p> 
-                </div>
+
+        <div class="footer-container">
+
+            <div class="menu-titulo-footer">
+                <img class="footer-logo" src="asset/logo.jpg" alt="">
+                <p>Alura<span>geek</span></p>
             </div>
-       
+            <div class="footer-autor">
+                <p>© Desarrollado por</p>
+                <p>Alejandro <span>Anchundia</span></p>
+            </div>
+        </div>
+
     </footer>
-    <script src="js/conexionApi.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+
 
 </body>
 
