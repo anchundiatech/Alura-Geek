@@ -1,22 +1,10 @@
 {
-    "productos": [
-        {
-            "id": 1,
-            "nombre": "iPhone",
-            "precio": 1000,
-            "imagen": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-        },
-        {
-            "id": 2,
-            "nombre": "iPad",
-            "precio": 2000,
-            "imagen": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-        },
-        {
-            "id": 3,
-            "nombre": "iPod",
-            "precio": 3000,
-            "imagen": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-        }
-    ]
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Baby Yoda",
+      "precio": 500,
+      "imagen": "https://resources.claroshop.com/medios-plazavip/fotos/productos_sears1/original/3140794.jpg"
+    }
+  ]
 }
