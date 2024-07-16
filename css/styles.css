@@ -508,3 +508,21 @@ i:hover {
       font-size: 18px;
   }
 }
+
+/* Estilo para mensajes de error */
+.error-message {
+  color:var(--color-tertiary);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-family: var(--font);
+}
+
+/* Estilo para el contenedor de productos vacíos */
+.empty-message {
+  color: grey;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
