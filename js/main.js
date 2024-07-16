@@ -23,7 +23,6 @@ function crearTarjeta(nombre, precio, imagen, id) {
     </div>
   `;
 
-
   // Botón eliminar producto
   const botonEliminar = productos.querySelector(".btn__delete");
   botonEliminar.addEventListener("click", async () => {
@@ -31,6 +30,7 @@ function crearTarjeta(nombre, precio, imagen, id) {
       await conexionAPI.eliminarTarjeta(id);
       productos.remove();
     } catch (error) {
+      mostrarMensaje("Error al eliminar el producto", "error-message");
       console.error(error);
     }
   });
@@ -39,15 +39,30 @@ function crearTarjeta(nombre, precio, imagen, id) {
   return productos;
 }
 
+// Función para mostrar mensajes
+function mostrarMensaje(mensaje, clase) {
+  tarjeta.innerHTML = `<p class="${clase}">${mensaje}</p>`;
+}
+
 // Crea un contenedor para cada producto de la base de datos
 async function listaProductos() {
-  const listaAPI = await conexionAPI.listaProductos();
-  listaAPI.forEach(producto =>
-    tarjeta.appendChild(crearTarjeta(producto.nombre, producto.precio, producto.imagen, producto.id))
-  );
+  try {
+    const listaAPI = await conexionAPI.listaProductos();
+    if (listaAPI.length === 0) {
+      mostrarMensaje("Lista de productos no encontrada", "empty-message");
+    } else {
+      tarjeta.innerHTML = ""; // Limpia el contenedor antes de agregar los productos
+      listaAPI.forEach(producto =>
+        tarjeta.appendChild(crearTarjeta(producto.nombre, producto.precio, producto.imagen, producto.id))
+      );
+    }
+  } catch (error) {
+    mostrarMensaje("Error al cargar la lista de productos", "error-message");
+    console.error('Error al cargar la lista de productos:', error);
+  }
 }
-listaProductos(
-);
+
+listaProductos();
 
 // Agrega nuevos productos en la base de datos
 async function crearNuevaTarjeta(e) {
@@ -62,8 +77,10 @@ async function crearNuevaTarjeta(e) {
   try {
     await conexionAPI.nuevoProducto(nombre, precio, imagen, id);
     console.log('Producto creado exitosamente');
+    tarjeta.innerHTML = ""; // Limpia el contenedor antes de actualizar la lista de productos
     listaProductos(); // Actualiza la lista de productos
   } catch (error) {
+    mostrarMensaje("Error al crear el producto", "error-message");
     console.error('Error al crear el producto:', error);
   }
 }
