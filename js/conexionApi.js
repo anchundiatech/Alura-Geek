@@ -17,7 +17,7 @@ async function listaProductos() {
 // Función para crear un nuevo producto
 async function nuevoProducto(nombre, precio, imagen, id) {
   try {
-    const conexion = await fetch("https://alurageek-fake-api-rose.vercel.app/product", {
+    const conexion = await fetch("https://alurageek-fake-api-rose.vercel.app/product",{
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({

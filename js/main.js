@@ -1,4 +1,4 @@
-import { conexionAPI } from "./conexionAPI.js";
+import { conexionAPI } from "./conexionAPI";
 
 const tarjeta = document.querySelector("[data-producto]");
 const botonFormulario = document.querySelector("[data-formulario]");
@@ -23,6 +23,7 @@ function crearTarjeta(nombre, precio, imagen, id) {
     </div>
   `;
 
+
   // Botón eliminar producto
   const botonEliminar = productos.querySelector(".btn__delete");
   botonEliminar.addEventListener("click", async () => {
@@ -45,7 +46,8 @@ async function listaProductos() {
     tarjeta.appendChild(crearTarjeta(producto.nombre, producto.precio, producto.imagen, producto.id))
   );
 }
-listaProductos();
+listaProductos(
+);
 
 // Agrega nuevos productos en la base de datos
 async function crearNuevaTarjeta(e) {
