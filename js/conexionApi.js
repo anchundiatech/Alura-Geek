@@ -1,62 +1,63 @@
 // Función para obtener la lista de productos
 async function listaProductos() {
   try {
-    const conexion = await fetch("https://alurageek-fake-api-rose.vercel.app/product");
-    if (!conexion.ok) {
-      throw new Error('Error en la solicitud');
+    const response = await fetch("https://alurageek-fake-api-rose.vercel.app/product");
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
     }
-    const conexionConvertida = await conexion.json();
-    console.log(conexionConvertida);
-    return conexionConvertida;
+    const data = await response.json();
+    console.log(data);
+    return data;
   } catch (error) {
     alert("Error en la conexión: " + error.message);
-    console.error(error);
+    console.error("Detalles del error:", error);
   }
 }
 
 // Función para crear un nuevo producto
 async function nuevoProducto(nombre, precio, imagen, id) {
   try {
-    const conexion = await fetch("https://alurageek-fake-api-rose.vercel.app/product",{
+    const response = await fetch("https://alurageek-fake-api-rose.vercel.app/product", {
       method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        nombre: nombre,
-        precio: precio,
-        imagen: imagen,
-        id: id
-      })
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ nombre, precio, imagen, id })
     });
 
-    if (!conexion.ok) {
-      throw new Error('Error en la solicitud');
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
     }
 
-    const conexionConvertida = await conexion.json();
-    return conexionConvertida;
+    const data = await response.json();
+    console.log("Producto creado:", data);
+    return data;
   } catch (error) {
     alert("Error en la conexión: " + error.message);
-    console.error(error);
+    console.error("Detalles del error:", error);
   }
 }
 
 // Función para eliminar un producto
 async function eliminarTarjeta(id) {
   try {
-    const conexion = await fetch(`https://alurageek-fake-api-rose.vercel.app/product/${id}`, {
+    const response = await fetch(`https://alurageek-fake-api-rose.vercel.app/product/${id}`, {
       method: "DELETE",
-      headers: { "Content-type": "application/json" }
+      headers: {
+        "Content-Type": "application/json"
+      }
     });
 
-    if (!conexion.ok) {
-      throw new Error('Error en la solicitud');
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
     }
 
-    const conexionConvertida = await conexion.json();
-    return conexionConvertida;
+    const data = await response.json();
+    console.log("Producto eliminado:", data);
+    return data;
   } catch (error) {
     alert("Error en la conexión: " + error.message);
-    console.error(error);
+    console.error("Detalles del error:", error);
   }
 }
 
