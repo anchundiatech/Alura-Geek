@@ -255,14 +255,12 @@ i:hover {
   font-size: 20px;
 }
 
-/* Estilo responsivo para tabletas */
 
 
 /*Style formulario*/
 .contenedor_formulario {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: initial;
   width: 100%;
