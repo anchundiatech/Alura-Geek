@@ -1,7 +1,7 @@
 // Función para obtener la lista de productos
 async function listaProductos() {
   try {
-    const response = await fetch("https://alurageek-fake-api-rose.vercel.app/product");
+    const response = await fetch('https://alura-geek-api-six.vercel.app/productos');
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
     }
