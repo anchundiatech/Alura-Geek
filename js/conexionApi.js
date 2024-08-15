@@ -17,7 +17,7 @@ async function listaProductos() {
 // Función para crear un nuevo producto
 async function nuevoProducto(nombre, precio, imagen, id) {
   try {
-    const response = await fetch("https://alurageek-fake-api-rose.vercel.app/product", {
+    const response = await fetch("https://alura-geek-api-six.vercel.app/productos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -41,7 +41,7 @@ async function nuevoProducto(nombre, precio, imagen, id) {
 // Función para eliminar un producto
 async function eliminarTarjeta(id) {
   try {
-    const response = await fetch(`https://alurageek-fake-api-rose.vercel.app/product/${id}`, {
+    const response = await fetch(`https://alura-geek-api-six.vercel.app/productos/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
